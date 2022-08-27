@@ -26,7 +26,8 @@ DVR_PFX="DVRMgr: "
 #   RecordPath =  /HDHomeRunDVR/recordings  # Should always be this
 #   Port = 59090                            # must match the Dockerfile
 #   RecordStreamsMax=16                     # Enable max recordings
-#   BetaEngine=1                            # Used by this script
+#   BetaEngine=1                            # Used by this script DEFAULT 2022-08-27 ARO Removed
+#   BetaEngine=0			    # 2022-08-27 ARO new default changed below to just pull newest non-beta release
 #
 create_initial_config()
 {
@@ -35,7 +36,7 @@ create_initial_config()
 	echo "RecordPath=${DVRRec}" >> ${DVRData}/${DVRConf}
 	echo "Port=${DefaultPort}" >> ${DVRData}/${DVRConf}
 	echo "RecordStreamsMax=16" >>  ${DVRData}/${DVRConf}
-	echo "BetaEngine=1" >>  ${DVRData}/${DVRConf}
+	echo "BetaEngine=0" >>  ${DVRData}/${DVRConf}
 }
 
 ###########################
